@@ -38,3 +38,4 @@ com\portfolioarrieta\backendarrieta\Entity\Educacion.class
 com\portfolioarrieta\backendarrieta\Controller\PersonaController.class
 com\portfolioarrieta\backendarrieta\Security\jwt\JwtTokenFilter.class
 com\portfolioarrieta\backendarrieta\Entity\Experiencia.class
+com\portfolioarrieta\backendarrieta\WebConfig.class
