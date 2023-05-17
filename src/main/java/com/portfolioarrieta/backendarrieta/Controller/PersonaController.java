@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = {"https://portfolioarrieta.web.app"})
+//@CrossOrigin(origins = {"https://portfolioarrieta.web.app"})
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
@@ -28,6 +28,12 @@ public class PersonaController {
     public List<Persona> getPersona(){
     return ipersonaService.getPersona();
     }
+    
+    @GetMapping("/ping")
+	public String ping() {
+            System.out.println("por ping");
+		return "haciendo ping";
+	}
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping ("/personas/crear")
