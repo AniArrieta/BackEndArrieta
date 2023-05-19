@@ -1,4 +1,3 @@
-com\portfolioarrieta\backendarrieta\Security\jwt\JwtProvider.class
 com\portfolioarrieta\backendarrieta\Security\Controller\Mensaje.class
 com\portfolioarrieta\backendarrieta\Security\Controller\AuthController.class
 com\portfolioarrieta\backendarrieta\Controller\CHys.class
@@ -27,7 +26,6 @@ com\portfolioarrieta\backendarrieta\Security\Enums\RolNombre.class
 com\portfolioarrieta\backendarrieta\Security\Repository\iUsuarioRepository.class
 com\portfolioarrieta\backendarrieta\Security\Entity\UsuarioPrincipal.class
 com\portfolioarrieta\backendarrieta\Dto\dtoEducacion.class
-com\portfolioarrieta\backendarrieta\Security\jwt\JwtEntryPoint.class
 com\portfolioarrieta\backendarrieta\Service\Seducacion.class
 com\portfolioarrieta\backendarrieta\Repository\Rhys.class
 com\portfolioarrieta\backendarrieta\Security\Service\UsuarioService.class
@@ -36,6 +34,5 @@ com\portfolioarrieta\backendarrieta\Security\Entity\Usuario.class
 com\portfolioarrieta\backendarrieta\Dto\dtoExperiencia.class
 com\portfolioarrieta\backendarrieta\Entity\Educacion.class
 com\portfolioarrieta\backendarrieta\Controller\PersonaController.class
-com\portfolioarrieta\backendarrieta\Security\jwt\JwtTokenFilter.class
 com\portfolioarrieta\backendarrieta\Entity\Experiencia.class
 com\portfolioarrieta\backendarrieta\WebConfig.class

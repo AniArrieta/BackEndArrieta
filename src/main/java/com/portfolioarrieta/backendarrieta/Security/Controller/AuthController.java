@@ -5,7 +5,6 @@
  */
 package com.portfolioarrieta.backendarrieta.Security.Controller;
 
-import com.portfolioarrieta.backendarrieta.Security.Dto.JwtDto;
 import com.portfolioarrieta.backendarrieta.Security.Dto.LoginUsuario;
 import com.portfolioarrieta.backendarrieta.Security.Dto.NuevoUsuario;
 import com.portfolioarrieta.backendarrieta.Security.Entity.Rol;
@@ -13,18 +12,17 @@ import com.portfolioarrieta.backendarrieta.Security.Entity.Usuario;
 import com.portfolioarrieta.backendarrieta.Security.Enums.RolNombre;
 import com.portfolioarrieta.backendarrieta.Security.Service.RolService;
 import com.portfolioarrieta.backendarrieta.Security.Service.UsuarioService;
-import com.portfolioarrieta.backendarrieta.Security.jwt.JwtProvider;
 import java.util.HashSet;
 import java.util.Set;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.authentication.AuthenticationManager;
+//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+//import org.springframework.security.core.Authentication;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,18 +33,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://backendarrieta.onrender.com")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
-    @Autowired
-    AuthenticationManager authenticationManager;
+    //@Autowired
+    //AuthenticationManager authenticationManager;
     @Autowired
     UsuarioService usuarioService;
     @Autowired
     RolService rolService;
-    @Autowired
-    JwtProvider jwtProvider;
+    //@Autowired
+    //JwtProvider jwtProvider;
     
     @PostMapping("/nuevo")
     public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
@@ -74,22 +72,41 @@ public class AuthController {
     }
     
     @PostMapping("/login")
-    public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
-        if(bindingResult.hasErrors())
-            return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
-        
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-        loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
-        
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        
-        String jwt = jwtProvider.generateToken(authentication);
-        
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        
-        JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
-        
-        return new ResponseEntity(jwtDto, HttpStatus.OK);
+    public ResponseEntity<?> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
+        if (bindingResult.hasErrors())
+           return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
+
+         if (!isValidCredentials(loginUsuario.getNombreUsuario(), loginUsuario.getPassword())) {
+           return new ResponseEntity(new Mensaje("Credenciales inválidas"), HttpStatus.UNAUTHORIZED);
+        }
+
+        return new ResponseEntity(new Mensaje("Autenticación exitosa"), HttpStatus.OK);
+    }
+    private boolean isValidCredentials(String nombreUsuario, String password){
+       if (nombreUsuario.equals("usuario") && password.equals("contraseña")) {
+        return true;
+        }  
+        return false; 
     }
     
 }
+
+    //@PostMapping("/login")
+    //public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
+    //    if(bindingResult.hasErrors())
+    //        return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
+    //    
+    //    Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+    //    loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+    //    
+    //    SecurityContextHolder.getContext().setAuthentication(authentication);
+        
+    //    String jwt = jwtProvider.generateToken(authentication);
+        
+    //    UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        
+    //    JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
+        
+    //    return new ResponseEntity(jwtDto, HttpStatus.OK);
+    //} 
+    

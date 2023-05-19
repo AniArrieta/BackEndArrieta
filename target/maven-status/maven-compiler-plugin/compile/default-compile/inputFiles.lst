@@ -7,7 +7,6 @@ C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\bac
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\Entity\UsuarioPrincipal.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Entity\Educacion.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Entity\Persona.java
-C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\jwt\JwtProvider.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\MainSecurity.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Controller\CEducacion.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\Dto\LoginUsuario.java
@@ -34,8 +33,6 @@ C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\bac
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\Repository\iRolRepository.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\Service\UserDetailsImpl.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Entity\hys.java
-C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\jwt\JwtEntryPoint.java
-C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\jwt\JwtTokenFilter.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Service\Shys.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\BackendarrietaApplication.java
 C:\Users\Anabela\Downloads\backendarrieta\src\main\java\com\portfolioarrieta\backendarrieta\Security\Enums\RolNombre.java
