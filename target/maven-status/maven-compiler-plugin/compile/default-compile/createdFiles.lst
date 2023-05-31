@@ -1,5 +1,4 @@
 com\portfolioarrieta\backendarrieta\Security\Controller\Mensaje.class
-com\portfolioarrieta\backendarrieta\Security\Controller\AuthController.class
 com\portfolioarrieta\backendarrieta\Controller\CHys.class
 com\portfolioarrieta\backendarrieta\Entity\Persona.class
 com\portfolioarrieta\backendarrieta\Security\MainSecurity.class
@@ -20,7 +19,6 @@ com\portfolioarrieta\backendarrieta\Security\Dto\LoginUsuario.class
 com\portfolioarrieta\backendarrieta\Security\Service\UserDetailsImpl.class
 com\portfolioarrieta\backendarrieta\Repository\RExperiencia.class
 com\portfolioarrieta\backendarrieta\BackendarrietaApplication.class
-com\portfolioarrieta\backendarrieta\Security\Dto\JwtDto.class
 com\portfolioarrieta\backendarrieta\Dto\dtoHys.class
 com\portfolioarrieta\backendarrieta\Security\Enums\RolNombre.class
 com\portfolioarrieta\backendarrieta\Security\Repository\iUsuarioRepository.class
