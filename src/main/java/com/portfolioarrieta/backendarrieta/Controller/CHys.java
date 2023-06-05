@@ -2,7 +2,6 @@ package com.portfolioarrieta.backendarrieta.Controller;
 
 import com.portfolioarrieta.backendarrieta.Dto.dtoHys;
 import com.portfolioarrieta.backendarrieta.Entity.hys;
-import com.portfolioarrieta.backendarrieta.Security.Controller.Mensaje;
 import com.portfolioarrieta.backendarrieta.Service.Shys;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-//@CrossOrigin(origins = {"https://portfolioarrieta.web.app", "http://localhost:4200"})
+@CrossOrigin(origins = "https://localhost:4200")
 @RequestMapping("/skill")
 public class CHys {
 
